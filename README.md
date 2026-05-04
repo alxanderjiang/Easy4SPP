@@ -7,7 +7,7 @@ An easily ported multi-GNSS Standard Point Positioning (SPP) and common PNT mode
 This is a part of open-source toolbox Easy4PNT. Other toolboxs of Easy4PNT is listed here (clicked to jump to the target): [[Easy4B2b]](https://github.com/alxanderjiang/Easy4B2b), [[Easy4RTK]](https://github.com/alxanderjiang/Easy4RTK), [[Easy4PPP]](https://github.com/alxanderjiang/Easy4PPP), [[Easy4PTK]](https://github.com/alxanderjiang/Easy4PTK).
 
 ## Quick Start
-1. Running the main function of src/brdc_proc.py to get the example IF-SPP results of WUH2 on DOY 132, 2024. The results stored in the "nav_result" folder.
+1. Running the main function of spp_src/brdc_pro.py to get the example IF-SPP results of WUH2 on DOY 132, 2024. The results stored in the "nav_result" folder.
 2. The result can be visualized by running the Jupyter Notebook file "nav_result.ipynb". The positioning errors, clock bias of different systems is shown after running all the blocks in "nav_result.ipynb"
 3. Users can transfer the results log in '.npy' format into ASCII log in '.txt' format by running the last block of "nav_result.ipynb"
 
@@ -39,7 +39,7 @@ pip install scipy
 ```
 
 ## Configurations
-Easy4SPP gives many configuration choices for different dataset collected by different GNSS devices. All configurations shold be set in the __main__ function of src/brdc_proc.py, from about line 1141 to 1167. The path of broadcast ephemeris in version of RINEX 3.x shold be set as:
+Easy4SPP gives many configuration choices for different dataset collected by different GNSS devices. All configurations shold be set in the __main__ function of spp_src/brdc_pro.py, from about line 1141 to 1167. The path of broadcast ephemeris in version of RINEX 3.x shold be set as:
 ```Python
     #广播星历读取
     eph_path= 'data/BRDC/brdc1320.24p' 
