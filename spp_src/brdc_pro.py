@@ -1160,10 +1160,10 @@ if __name__ == "__main__":
     #排除卫星列表
     sat_out=[]
 
-    #单频/双频
+    #单频/双频(SF/IF)
     sol_mode='IF'
     
-    #参考坐标(动态可以填基准站坐标)
+    #结果文件保存路径
     out_path='nav_result'
         
     
