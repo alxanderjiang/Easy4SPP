@@ -41,11 +41,41 @@ pip install scipy
 ## Configurations
 Easy4SPP gives many configuration choices for different dataset collected by different GNSS devices. All configurations shold be set in the __main__ function of src/brdc_proc.py, from about line 1141 to 1167. The path of broadcast ephemeris in version of RINEX 3.x shold be set as:
 ```Python
-#广播星历读取
-eph_path= 'data/BRDC/brdc1320.24p' 
+    #广播星历读取
+    eph_path= 'data/BRDC/brdc1320.24p' 
 ```
 The path of obervation file in version of RINEX 3.x or RINEX 4.x shold be set as:
 ```Python
-#观测文件
-obs_path='data/OBS/WUH2/wuh21320.24o'
+    #观测文件
+    obs_path='data/OBS/WUH2/wuh21320.24o'
 ···
+The systems, selected signals and frequencies shold be set as:
+```Python
+    #观测系统与频点(需对应)
+    sys_indexes=['G','C','E']
+    obs_types=[
+               ['C1C','L1C','D1C','S1C','C2W','L2W','D2W','S2W'],
+               ['C2I','L2I','D2I','S2I','C6I','L6I','D6I','S6I'],
+               ['C1X','L1X','D1X','S1X','C5X','L5X','D5X','L5X']
+               ]
+    freqs=[
+           [1575.420e6,1176.45e6],
+           [1561.098e6,1268.52e6],
+           [1575.420e6,1227.60e6]
+           ]
+```
+Make sure that all the system&signal&frequency selections are corresponding in above lists. The outlier satellites shold be set as:
+```Python
+    #排除卫星列表
+    sat_out=[]
+```
+If sat_out is empty, that means no satellites will be outlier in Easy4SPP. Choose single-freqency (SF) or ion-free (IF) observation model as:
+```Python
+    #单频/双频(SF/IF)
+    sol_mode='IF'
+```
+The SF mode means using the GPS Klobchar model parameters readed in broadcast ephemeris, the IF means that using IF obsevation model to eliminate ionospheric delay. Finally, the results saving path shold be set as:
+```Python
+    #结果文件保存路径
+    out_path='nav_result'
+```
