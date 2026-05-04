@@ -48,7 +48,7 @@ The path of obervation file in version of RINEX 3.x or RINEX 4.x shold be set as
 ```Python
     #观测文件
     obs_path='data/OBS/WUH2/wuh21320.24o'
-···
+```
 The systems, selected signals and frequencies shold be set as:
 ```Python
     #观测系统与频点(需对应)
